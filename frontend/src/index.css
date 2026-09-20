@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* ── Custom colour tokens ─────────────────────────────────────────────────── */
+:root {
+  --color-bg:        #0f172a;   /* slate-900 */
+  --color-surface:   #1e293b;   /* slate-800 */
+  --color-border:    #334155;   /* slate-700 */
+  --color-primary:   #38bdf8;   /* sky-400   */
+  --color-success:   #4ade80;   /* green-400 */
+  --color-warning:   #fb923c;   /* orange-400*/
+  --color-danger:    #f87171;   /* red-400   */
+  --color-text:      #e2e8f0;   /* slate-200 */
+  --color-muted:     #94a3b8;   /* slate-400 */
+}
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* ── Scrollbar ────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 6px; height: 6px; }
+::-webkit-scrollbar-track  { background: var(--color-bg); }
+::-webkit-scrollbar-thumb  { background: var(--color-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-muted); }
+
+/* ── Severity badge colours ──────────────────────────────────────────────── */
+.badge-normal   { background: #166534; color: #4ade80; }
+.badge-moderate { background: #854d0e; color: #fbbf24; }
+.badge-high     { background: #9a3412; color: #fb923c; }
+.badge-severe   { background: #7f1d1d; color: #f87171; }
+
+/* ── Card base ────────────────────────────────────────────────────────────── */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+}
+
+/* ── Recharts tooltip override ───────────────────────────────────────────── */
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  background: var(--color-surface) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: 0.5rem !important;
+}
